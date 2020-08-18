@@ -1,0 +1,118 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+    <body onLoad="renderTime();">
+    <navbar id="clock">
+        <div id="clockDisplay" class="time"></div>
+    </navbar>
+    <section class="cards" id="cards">
+    <a href="./majaplaan.php" class="card">
+            <div class="card-text">
+                <h1>Majaplaan</h1>
+            </div>
+            <div class="card-img1"></div>
+        </a>
+
+        <a href="./tunniplaan.html" class="card">
+            <div class="card-text">
+                <h1>Tunniplaan</h1>
+            </div>
+            <div class="card-img2"></div>
+        </a>
+
+        <a href="./menyy.html" class="card">
+            <div class="card-text">
+                <h1>Kohviku menüü</h1>
+            </div>
+            <div class="card-img3"></div>
+        </a>
+    </section>
+    <section class="cards2" id="cards2">
+        <a id="myBtn" class="card">
+            <div class="card-text">
+                <h1>Info</h1>
+            </div>
+            <div class="card-img4" href="#"></div>
+        </a>
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Test test test</p>
+            </div>
+        </div>
+        <a href="#" class="card">
+            <div class="card-text">
+                <h1>Enesetunne</h1>
+            </div>
+            <div class="card-img5"></div>
+        </a>
+        <a href="#" class="card">
+            <div class="card-text">
+                <h1>Külalisraamat</h1>
+            </div>
+            <div class="card-img6"></div>
+        </a>
+    </section>
+    <script>
+        //enter refresh time in "minutes:seconds" Minutes should range from 0 to inifinity. Seconds should range from 0 to 59
+        var limit="00:59"
+        
+        if (document.images){
+        var parselimit=limit.split(":")
+        parselimit=parselimit[0]*60+parselimit[1]*1
+        }
+        function beginrefresh(){
+        if (!document.images)
+        return
+        if (parselimit==1)
+        window.location.href="?"
+        else{ 
+        parselimit-=1
+        curmin=Math.floor(parselimit/60)
+        cursec=parselimit%60
+        if (curmin!=0)
+        curtime=curmin+" minutes and "+cursec+" seconds left until page refresh!"
+        else
+        curtime=cursec+" seconds left until page refresh!"
+        window.status=curtime
+        setTimeout("beginrefresh()",1000)
+        }
+        }
+        
+        //window.onload=beginrefresh
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var a = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        a.onclick = function() {
+        modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+    </script>
+</body>
+</html>
+
+    

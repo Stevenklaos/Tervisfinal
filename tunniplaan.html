@@ -1,0 +1,46 @@
+
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    
+    <script>
+    //enter refresh time in "minutes:seconds" Minutes should range from 0 to inifinity. Seconds should range from 0 to 59
+    var limit="00:59"
+    
+    if (document.images){
+    var parselimit=limit.split(":")
+    parselimit=parselimit[0]*60+parselimit[1]*1
+    }
+    function beginrefresh(){
+    if (!document.images)
+    return
+    if (parselimit==1)
+    window.location.href="?"
+    else{ 
+    parselimit-=1
+    curmin=Math.floor(parselimit/60)
+    cursec=parselimit%60
+    if (curmin!=0)
+    curtime=curmin+" minutes and "+cursec+" seconds left until page refresh!"
+    else
+    curtime=cursec+" seconds left until page refresh!"
+    window.status=curtime
+    setTimeout("beginrefresh()",1000)
+    }
+    }
+    
+    //window.onload=beginrefresh
+    
+    </script>
+    </head>
+    <body>
+    <iframe src='https://nooruse.ois.ee/et/schedule/infoboard' height='1000' width='1900' style='border: 0'></iframe><div style="position: absolute; left: 30px; bottom: 30px; ">
+    <a href="index.html"><input type="button" value="Algusesse" style="background-color: white; color: red; font-size: 30; font-weight: bold; width: 250; height: 50"></a>
+    </div>
+    <script language="javascript">
+        beginrefresh();
+    </script>
+    </body>
+    </html>
+    

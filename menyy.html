@@ -1,0 +1,115 @@
+
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+<script>
+//enter refresh time in "minutes:seconds" Minutes should range from 0 to inifinity. Seconds should range from 0 to 59
+var limit="00:59"
+
+if (document.images){
+var parselimit=limit.split(":")
+parselimit=parselimit[0]*60+parselimit[1]*1
+}
+function beginrefresh(){
+if (!document.images)
+return
+if (parselimit==1)
+window.location.href="?"
+else{ 
+parselimit-=1
+curmin=Math.floor(parselimit/60)
+cursec=parselimit%60
+if (curmin!=0)
+curtime=curmin+" minutes and "+cursec+" seconds left until page refresh!"
+else
+curtime=cursec+" seconds left until page refresh!"
+window.status=curtime
+setTimeout("beginrefresh()",1000)
+}
+}
+
+//window.onload=beginrefresh
+
+</script>
+</head>
+<body>
+<div style="position: absolute; left: 30px; bottom: 30px; ">
+<a href="index.html"><input type="button" value="Algusesse" style="background-color: white; color: red; font-size: 30; font-weight: bold; width: 250; height: 50"></a>
+</div>
+<script language="javascript">
+    beginrefresh();
+</script>
+
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <title>Tartu Tervishoiu Kõrgkooli kohvik - tänane menüü</title>
+  <meta http-equiv="refresh" content="300">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+  </script>
+
+  <style>
+		td {
+			font-size: 1.15em;
+			padding: 0px 0px 0px 0px;
+		}		
+  </style>
+	
+</head>
+<body>
+  
+<div class="container">
+	<div class="row" id="header">
+		<div class="col-sm-12 col-sm-offset-0" >
+			<h3>Tänane menüü</h3>
+		</div>
+	</div>
+	
+		
+	<div class="col-sm-12 col-sm-offset-0">
+		<div class="row">
+			<table class="table">
+			<tbody>
+				<tr>
+					<td style color="green;">Praad\003A Pastaroog frikadellidega</td>
+					<td nowrap style="text-align:right; color:white;">2.90&euro;</td>
+				</tr>
+				<tr>
+					<td style color="green">Praad\003A Paneeritud kanafilee</td>
+					<td nowrap style="text-align:right; color:white;">3.90&euro;</td>
+				</tr>
+				<tr>
+					<td style color="green">Lisand\003A Riis</td>
+					<td nowrap style="text-align:right; color:white;"></td>
+				</tr>
+				<tr>
+					<td style color="green">Lisand\003A </style>Ahjukartul</td>
+					<td nowrap style="text-align:right; color:white;">
+					</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="row" id="footer">
+		<div class="col-sm-12 col-sm-offset-0">
+			<h4>Kohvik avatud E-R 10.00-14.00</h4>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
+</body>
+</html>

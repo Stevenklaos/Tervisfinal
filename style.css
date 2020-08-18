@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+  width: 100vw;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  color: #3e3e3e;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  background: url('./img/tervistaust2.png') no-repeat fixed 100%;
+  background-size: cover;
+}
+::-webkit-scrollbar {
+  width: 0px;  /* Remove scrollbar space */
+}
+a:link {
+  text-decoration: none;
+  color: black;
+}
+a:visited { 
+  text-decoration: none;
+  color:black; 
+}
+a:hover { text-decoration: none;
+  color:black;
+}
+a:focus { text-decoration: none;
+  color:black;
+}
+a:hover, a:active { 
+  text-decoration: none; 
+  color:black
+}
+#myBtn {
+  background-color: white;
+  /* border: none; */
+  font-size: 25px;
+  font-family: Tahoma, Geneva, sans-serif;
+  text-transform: uppercase;
+}
+h1 {
+  font-size: 25px;
+  padding: 15 0 15 0px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+#clock {
+  top: 0;
+  display: inline-block;
+  padding: 10px;
+  max-width: 100%;
+  position: sticky;
+}
+/* Kellaaja ja kuupäeva stiil */
+.time {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #000;
+    border: 6px solid #000;
+    width: 200px;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    float: left;
+    /* background: url(./img/Tervistaust_mini.JPG); */
+    background-size: cover;
+    position: sticky;
+    background: white;
+}
+/* 1. rida */
+.cards {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  justify-content: space-around;
+  overflow: hidden;
+  margin-top: -140px;
+}
+.card {
+  display: grid;
+  grid-template-columns: 350px;
+  grid-template-rows: 100px 410px;
+  grid-template-areas: "text" "image";
+
+  font-family: Tahoma, Geneva, sans-serif;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+/* 1. rea kaardimenüüde pildid */
+.card-img1 {
+  grid-area: image;
+  background: url(./img/TTK.JPG);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-size: cover;
+}
+.card-img2 {
+  grid-area: image;
+  background: url(./img/timetable.jpg);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-size: cover;
+}
+.card-img3 {
+  grid-area: image;
+  background: url(./img/kohvik.png);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-size: cover;
+}
+.card-text {
+  grid-area: text;
+  margin: 25px;
+}
+/* .card:hover {
+  transform: scale(1.2);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+} */
+/* 2. rida */
+.cards2 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  justify-content: space-around;
+  overflow: hidden;
+}
+/* 2. rea kaardimenüüde pildid */
+.card-img4 {
+  grid-area: image;
+  background: url(./img/info.png);
+  height: 350px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-size: cover;
+}
+.card-img5 {
+  grid-area: image;
+  background: url(./img/happyface.jpg);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-size: cover;
+}
+.card-img6 {
+  grid-area: image;
+  background: url(./img/4744716018893_3.jpg);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-size: cover;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
